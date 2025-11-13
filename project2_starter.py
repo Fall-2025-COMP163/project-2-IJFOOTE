@@ -127,12 +127,13 @@ class Player(Character):
     def __init__(self, name, character_class, health, strength, magic):
         super().__init__(name, health, strength, magic)
         self.character_class = character_class
-        level = 0
-        experience = 0
+        self.level = 1
+        self.experience = 0
         """
         Initialize a player character.
         Should call the parent constructor and add player-specific attributes.
         """
+
         # TODO: Call super().__init__() with the basic character info
         # TODO: Store the character_class (like "Warrior", "Mage", etc.)
         # TODO: Add any other player-specific attributes (level, experience, etc.)
@@ -141,6 +142,8 @@ class Player(Character):
     def display_stats(self):
        super().display_stats()
        print(f"Class: {self.character_class}")
+       print(f"Level: {self.level}")
+       print(f"Experience: {self.experience}")
        print("=" * 30)
 
     """
@@ -337,9 +340,5 @@ if __name__ == "__main__":
     print("\n⚔️ Testing Battle System:")
     battle = SimpleBattle(warrior, mage)
     battle.fight()
-
-    print("\n✅ Testing complete!")
-    # battle = SimpleBattle(warrior, mage)
-    # battle.fight()
 
     print("\n✅ Testing complete!")
