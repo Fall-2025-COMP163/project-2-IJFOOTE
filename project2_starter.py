@@ -96,7 +96,8 @@ class Character:
         self.health -= damage
         print(f"\n{self.name} takes {damage} damage.")
 
-        if self.health == 0:
+        if self.health < 0:
+            self.health = 0
             pass
 
         # TODO: Implement taking damage
